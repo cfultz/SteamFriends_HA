@@ -1,5 +1,8 @@
 # Steam Friends Integration for Home Assistant
 
+<img width="140" height="60" alt="image" src="https://github.com/user-attachments/assets/3d9cf62a-a582-485d-9fde-197cd2b99d2e" />
+
+
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 
 This is a custom integration for Home Assistant that provides a sensor to track how many of your Steam friends are currently online or in a game.
@@ -49,6 +52,34 @@ Configuration is done entirely through the Home Assistant UI.
 ## Sensor Usage
 
 The integration creates a single sensor named `sensor.online_steam_friends`.
+
+### Using 
+
+<img width="1014" height="532" alt="image" src="https://github.com/user-attachments/assets/6643c296-44de-4510-954f-024d4150d22f" />
+
+### Standard Badge
+
+```yaml
+type: entity
+show_name: true
+show_state: true
+show_icon: true
+entity: sensor.online_steam_friends
+name: Friends Online
+icon: mdi:steam
+show_entity_picture: false
+```
+
+### Mushroom Badge
+
+```yaml
+type: custom:mushroom-template-badge
+entity: sensor.online_steam_friends
+icon: mdi:steam
+content: "{{ states('sensor.online_steam_friends') }}"
+tap_action:
+  action: more-info
+```
 
 ### State
 
