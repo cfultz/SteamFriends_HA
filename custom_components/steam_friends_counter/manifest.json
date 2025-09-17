@@ -1,11 +1,9 @@
 {
-  "domain": "steam_friends_counter",
-  "name": "SteamFriendsCounter",
-  "version": "0.1.0",
+  "domain": "steam_friends",
+  "name": "Steam Friends Counter",
   "documentation": "https://github.com/cfultz/SteamFriends_HA",
   "issue_tracker": "https://github.com/cfultz/SteamFriends_HA/issues",
-  "requirements": [],
-  "dependencies": [],
   "codeowners": ["@cfultz"],
-  "iot_class": "cloud_polling"
+  "requirements": [],
+  "version": "0.1.0"
 }

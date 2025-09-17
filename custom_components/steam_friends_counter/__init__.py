@@ -1,17 +1,19 @@
-import logging
-from homeassistant import helpers
-from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
+from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.typing import ConfigType
+from .const import DOMAIN
 
-_LOGGER = logging.getLogger(__name__)
-
-DOMAIN = "steam_friends_counter"
+PLATFORMS = ["sensor"]
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
-    """Set up the Steam Friends Counter component."""
-    
-    if DOMAIN in config:
-        helpers.discovery.async_load_platform(hass, Platform.SENSOR, DOMAIN, config[DOMAIN], config)
+    """Set up the component."""
+    return True # We don't use YAML config anymore
 
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    """Set up Steam Friends from a config entry."""
+    hass.config_entries.async_setup_platforms(entry, PLATFORMS)
     return True
+
+async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    """Unload a config entry."""
+    return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
