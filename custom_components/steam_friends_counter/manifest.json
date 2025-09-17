@@ -1,8 +1,9 @@
 {
   "domain": "steam_friends_counter",
-  "name": "Steam Friends Counter",
-  "version": "0.0.1",
+  "name": "SteamFriendsCounter",
+  "version": "0.1.0",
   "documentation": "https://github.com/cfultz/SteamFriends_HA",
+  "issue_tracker": "https://github.com/cfultz/SteamFriends_HA/issues",
   "requirements": [],
   "dependencies": [],
   "codeowners": ["@cfultz"],
