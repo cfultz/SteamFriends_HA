@@ -1,44 +1,76 @@
-# Steam Friends Counter
+# Steam Friends Integration for Home Assistant
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" width="150px" height="150px">
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 
-A Home Assistant custom integration that counts the number of online friends from your Steam profile.
+This is a custom integration for Home Assistant that provides a sensor to track how many of your Steam friends are currently online or in a game.
 
-#### Features
+!
 
-* Counts the number of friends with an "online" status (including In-Game).
-* Automatically fetches your entire friends list without manual configuration.
-* Creates a single sensor entity to track the total count.
+***
 
----
+## Installation
 
-### Installation
+### Prerequisites
 
-This integration can be easily installed and managed via the **Home Assistant Community Store (HACS)**.
-
-#### Prerequisites
-
-* You must have **HACS** installed and configured in your Home Assistant instance.
-* You will need a **Steam Web API key**. You can get one from the [Steam Web API Key registration page](https://steamcommunity.com/dev/apikey).
-
-#### HACS Installation
-
-1.  Open HACS in your Home Assistant UI.
-2.  Go to the **Integrations** section.
-3.  Click the **three dots** in the top-right corner and select **Custom repositories**.
-4.  In the "Add custom repository" dialog, paste the URL of this repository: `https://github.com/cfultz/SteamFriends_HA`
-5.  Select the **Integration** category and click **ADD**.
-6.  You should now see the "Steam Friends Counter" in your list of new repositories. Click on it.
-7.  Select the **Download** button to install the integration.
+You must have the [Home Assistant Community Store (HACS)](https://hacs.xyz/) installed on your Home Assistant instance.
 
 ---
 
-### Configuration
+### Add Repository to HACS
 
-To configure the integration, add the following to your `configuration.yaml` file and restart Home Assistant.
+The easiest way to install this integration is to add it as a custom repository in HACS.
 
-```yaml
-steam_friends_counter:
-  api_key: YOUR_STEAM_API_KEY
-  steam_id: YOUR_STEAM_ID64
-```
+1.  Click the button below to add the repository to your HACS instance.
+
+    [![Open your Home Assistant instance and add a custom repository.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=cfultz&repository=SteamFriends_HA&category=integration)
+
+2.  If the button doesn't work, you can add it manually:
+    * Go to **HACS > Integrations**.
+    * Click the three-dots menu in the top right and select **"Custom repositories"**.
+    * In the "Repository" field, paste this URL: `https://github.com/cfultz/SteamFriends_HA`
+    * In the "Category" dropdown, select **"Integration"**.
+    * Click **"Add"**.
+
+3.  Once the custom repository is added, search for "Steam Friends" in HACS and click **"Download"**.
+
+4.  **Restart Home Assistant** for the integration to be loaded.
+
+---
+
+## Configuration
+
+Configuration is done entirely through the Home Assistant UI.
+
+1.  Go to **Settings > Devices & Services**.
+2.  Click the **+ ADD INTEGRATION** button in the bottom right.
+3.  Search for **"Steam Friends"** and select it.
+4.  In the configuration window, provide the following:
+    * **Steam API Key**: Your personal Steam Web API key. You can get one [here](https://steamcommunity.com/dev/apikey).
+    * **Steam ID**: Your 64-bit numeric Steam ID (also called `steamID64`). You can find yours using a tool like [SteamID Finder](https://www.steamidfinder.com/).
+
+5.  Click **Submit**, and the sensor will be created.
+
+---
+
+## Sensor Usage
+
+The integration creates a single sensor named `sensor.online_steam_friends`.
+
+### State
+
+The state of the sensor is a numeric value representing the total count of friends who are currently online, busy, away, or playing a game.
+
+### Attributes
+
+The sensor includes an `online_friends` attribute, which is a list containing details for each friend who is online. Each entry in the list includes:
+* `name`: The friend's Steam profile name.
+* `status`: A number representing their current status.
+* `game`: The name of the game they are currently playing, if any.
+
+You can use this attribute in templates to create more advanced automations or custom Lovelace cards.
+
+---
+
+## Contributions & Issues
+
+If you encounter a bug or have a feature request, please [open an issue](https://github.com/cfultz/SteamFriends_HA/issues) on the GitHub repository.
