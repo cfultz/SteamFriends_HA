@@ -24,7 +24,7 @@ This integration can be easily installed and managed via the **Home Assistant Co
 1.  Open HACS in your Home Assistant UI.
 2.  Go to the **Integrations** section.
 3.  Click the **three dots** in the top-right corner and select **Custom repositories**.
-4.  In the "Add custom repository" dialog, paste the URL of this repository: `https://github.com/your-username/steam-friends-counter`
+4.  In the "Add custom repository" dialog, paste the URL of this repository: `https://github.com/cfultz/SteamFriends_HA`
 5.  Select the **Integration** category and click **ADD**.
 6.  You should now see the "Steam Friends Counter" in your list of new repositories. Click on it.
 7.  Select the **Download** button to install the integration.
