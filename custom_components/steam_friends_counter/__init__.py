@@ -1,5 +1,4 @@
 import logging
-
 from homeassistant import helpers
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
@@ -13,6 +12,6 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Set up the Steam Friends Counter component."""
     
     if DOMAIN in config:
-        helpers.discovery.async_load_platform(hass, Platform.SENSOR, DOMAIN, config[DOMAIN])
+        helpers.discovery.async_load_platform(hass, Platform.SENSOR, DOMAIN, config[DOMAIN], config)
 
     return True
