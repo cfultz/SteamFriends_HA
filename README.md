@@ -4,9 +4,6 @@
 
 This is a custom integration for Home Assistant that provides a sensor to track how many of your Steam friends are currently online or in a game.
 
-!
-
-***
 
 ## Installation
 
@@ -14,7 +11,6 @@ This is a custom integration for Home Assistant that provides a sensor to track 
 
 You must have the [Home Assistant Community Store (HACS)](https://hacs.xyz/) installed on your Home Assistant instance.
 
----
 
 ### Add Repository to HACS
 
@@ -35,7 +31,6 @@ The easiest way to install this integration is to add it as a custom repository 
 
 4.  **Restart Home Assistant** for the integration to be loaded.
 
----
 
 ## Configuration
 
@@ -50,7 +45,6 @@ Configuration is done entirely through the Home Assistant UI.
 
 5.  Click **Submit**, and the sensor will be created.
 
----
 
 ## Sensor Usage
 
@@ -69,7 +63,6 @@ The sensor includes an `online_friends` attribute, which is a list containing de
 
 You can use this attribute in templates to create more advanced automations or custom Lovelace cards.
 
----
 
 ## Contributions & Issues
 
