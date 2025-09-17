@@ -1,1 +1,1 @@
-DOMAIN = "steam_friends_counter"
+DOMAIN = "steam_friends"
