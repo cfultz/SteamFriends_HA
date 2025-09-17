@@ -1,6 +1,7 @@
 {
   "domain": "steam_friends",
   "name": "Steam Friends Counter",
+  "config_flow": true,
   "documentation": "https://github.com/cfultz/SteamFriends_HA",
   "issue_tracker": "https://github.com/cfultz/SteamFriends_HA/issues",
   "codeowners": ["@cfultz"],
