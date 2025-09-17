@@ -1,5 +1,7 @@
 # Steam Friends Counter
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" width="150px" height="150px">
+
 A Home Assistant custom integration that counts the number of online friends from your Steam profile.
 
 #### Features
